@@ -1,3 +1,12 @@
+// number type
+// 1, 5.3, -10
+
+// string type
+// '안녕', "안녕", `안녕`
+
+// boolean type
+// true, false
+
 function add(n1: number, n2: number, showResult: boolean, phrase: string) {
 	//	if (typeof n1 !== 'number' || typeof n2 !== 'number') {
 	//		throw new Error('틀렸어!');
