@@ -1,4 +1,3 @@
-export {};
 // obeject type
 // 항상 키와 값(key-value pair)으로 값을 넣어야함
 // let user = {}; 

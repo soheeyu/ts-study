@@ -1,19 +1,25 @@
-// combine 더하기 연산자는 숫자와 문자열 모두 포함 가능
-// union type
-// 서로 다른 종류의 값을 사용해야 하는 경우 사용
-function combine(input1, input2, resultConversion) {
-    var result; // block scope
-    if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
-        result = +input1 + +input2; // input 앞에 + 기호 붙어 숫자로 변환되도록
-    }
-    else {
-        result = input1.toString() + input2.toString();
-    }
-    return result;
+// void type
+// undefined를 비롯해 값을 반환하지 않은 함수를 사용하는 경우 void를 기본적으로 사용
+function add(n1, n2) {
+    return n1 + n2;
 }
-var combineAges = combine(10, 20, 'as-number');
-console.log(combineAges);
-var combineStringAges = combine('123', '45', 'as-number');
-console.log(combineStringAges);
-var conbineNames = combine('소희', '졸령...', 'as-text');
-console.log(conbineNames);
+function printResult(num) {
+    console.log('결과는:' + num);
+    return;
+}
+printResult(add(6, 19));
+// let someValue: undefined; // undefined는 타입스크립트에서 타입으로 사용할 수 있음
+// function type
+// let combineValues: Function; // 이 변수에는 무엇을 저장하든 함수가 되어야함!
+// 매개변수의 같은 위치에서 어떤 유형 사용하려는 것인지 설명 가능
+var combineValues; // number로 변환
+combineValues = add;
+console.log(combineValues(10, 19));
+// callback
+function addAndHandle(n1, n2, callBack) {
+    var result = n1 + n2;
+    callBack(result);
+}
+addAndHandle(19, 34, function (result) {
+    console.log(result);
+}); // 10, 20, 익명함수 전달(익명 함수로 number를 받게됨)
